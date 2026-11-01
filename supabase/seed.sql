@@ -1,0 +1,26 @@
+-- Datos iniciales del catálogo (inventario del taller)
+-- Correr UNA sola vez en el SQL Editor de Supabase
+insert into repuestos (codigo, nombre, modelo_compatible, precio, stock) values
+  ('P155/30', 'Bomba de agua', null, 2775, 1),
+  ('124 240 19 17', 'Soporte del motor', 'Mercedes-Benz 190D', 4725, 2),
+  ('19467', 'Soporte de motor con tapa protectora', 'Mercedes-Benz E320 (2003–2005)', 3000, 1),
+  ('003 420 51 20', 'Pastillas de freno cerámicas', null, 2325, 2),
+  ('5330069 20', 'Poleas tensoras y poleas desviadoras', null, null, 1),
+  ('007 420 58 20', 'Pastilla de freno de cerámica', 'Mercedes-Benz C300', 2850, 1),
+  ('593793', 'Regulador', null, 5100, 1),
+  ('125060', 'Cilindro maestro de frenos', null, 700, 5),
+  ('260124', 'Kit de casquillos', 'Mercedes-Benz GL320 (2007–2013)', 750, 2),
+  ('LR061375', 'Pasador/deslizante de pinza', null, 375, 4),
+  ('281002728', 'Sensor de árbol de levas', 'Mercedes-Benz C280 (1996–2011)', 2100, 1),
+  ('P1511', 'Bomba de agua', 'Mercedes-Benz C230 (2003–2015)', 4050, 1),
+  ('098622A201', 'Bobina de encendido', 'Mercedes-Benz C230 (2002–2007)', 2200, 4),
+  ('261210170', 'Sensor del cigüeñal', 'Chrysler Crossfire', 2175, 1),
+  ('609029', 'Juego de pastillas de freno de disco', 'Mercedes-Benz 240D', 2100, 1),
+  ('604036', 'Actuador de puerta de aire - auxiliar', 'Dodge Journey', 1200, 1),
+  ('H829/1X', 'Filtro de aceite', 'Mercedes-Benz 400E', 675, 1),
+  ('TM7003', 'Tubo de refrigerante', null, 3200, 1),
+  ('9XW358164041', 'Limpiaparabrisas', 'Mercedes-Benz Clase C (W205)', 1300, 1),
+  ('3457.90D', 'Placa de inserción del termostato convencional', null, 1875, 1),
+  ('36913', 'Junta para tapón de llenado de aceite', 'Mercedes-Benz A220', 225, 1),
+  ('PWS176', 'Sensor de desgaste de pastillas de freno', 'Maybach 57', 450, 1),
+  ('82029717', 'Sello de transmisión automática', null, 375, 4);
