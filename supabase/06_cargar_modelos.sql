@@ -194,3 +194,51 @@ join (values
   ('604036', 'Dodge Journey')
 ) as m(codigo, modelo) on r.codigo = m.codigo
 on conflict (repuesto_id, modelo) do nothing;
+
+
+-- Modelos de los repuestos C230/C280 (confirmado: lista larga = sensor de árbol de levas,
+-- lista corta = bomba de agua P1511, bobina de encendido = solo C230)
+insert into repuesto_modelos (repuesto_id, modelo)
+select r.id, m.modelo
+from repuestos r
+join (values
+  ('281002728', 'Mercedes-Benz C230'),
+  ('281002728', 'Mercedes-Benz C280'),
+  ('281002728', 'Mercedes-Benz C32 AMG'),
+  ('281002728', 'Mercedes-Benz C43 AMG'),
+  ('281002728', 'Mercedes-Benz CL500'),
+  ('281002728', 'Mercedes-Benz CL55 AMG'),
+  ('281002728', 'Mercedes-Benz CL600'),
+  ('281002728', 'Mercedes-Benz CLK320'),
+  ('281002728', 'Mercedes-Benz CLK430'),
+  ('281002728', 'Mercedes-Benz CLK500'),
+  ('281002728', 'Mercedes-Benz CLK55 AMG'),
+  ('281002728', 'Mercedes-Benz CLS500'),
+  ('281002728', 'Mercedes-Benz CLS55 AMG'),
+  ('281002728', 'Mercedes-Benz E320'),
+  ('281002728', 'Mercedes-Benz E420'),
+  ('281002728', 'Mercedes-Benz E430'),
+  ('281002728', 'Mercedes-Benz E500'),
+  ('281002728', 'Mercedes-Benz E55 AMG'),
+  ('281002728', 'Mercedes-Benz G500'),
+  ('281002728', 'Mercedes-Benz G55 AMG'),
+  ('281002728', 'Mercedes-Benz ML320'),
+  ('281002728', 'Mercedes-Benz ML430'),
+  ('281002728', 'Mercedes-Benz ML500'),
+  ('281002728', 'Mercedes-Benz ML55 AMG'),
+  ('281002728', 'Mercedes-Benz R500'),
+  ('281002728', 'Mercedes-Benz S430'),
+  ('281002728', 'Mercedes-Benz S500'),
+  ('281002728', 'Mercedes-Benz S55 AMG'),
+  ('281002728', 'Mercedes-Benz S600'),
+  ('281002728', 'Mercedes-Benz SL500'),
+  ('281002728', 'Mercedes-Benz SL55 AMG'),
+  ('281002728', 'Mercedes-Benz SL600'),
+  ('281002728', 'Mercedes-Benz SLK32 AMG'),
+  ('281002728', 'Mercedes-Benz SLK320'),
+  ('P1511', 'Mercedes-Benz C230'),
+  ('P1511', 'Mercedes-Benz C250'),
+  ('P1511', 'Mercedes-Benz SLK250'),
+  ('098622A201', 'Mercedes-Benz C230')
+) as m(codigo, modelo) on r.codigo = m.codigo
+on conflict (repuesto_id, modelo) do nothing;
