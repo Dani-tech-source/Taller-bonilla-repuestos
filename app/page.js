@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   const { data: repuestos, error } = await supabase
     .from("repuestos")
-    .select("id, codigo, nombre, precio, stock, repuesto_modelos(modelo)")
+    .select("id, codigo, nombre, precio, stock, categoria, repuesto_modelos(modelo)")
     .order("nombre");
 
   return (
@@ -61,6 +61,12 @@ export default async function Home() {
                         </span>
                       )}
                     </div>
+
+                    {r.categoria && (
+                      <span className="self-start mt-2 text-xs font-medium bg-blue-50 text-blue-700 px-2 py-1 rounded">
+                        {r.categoria}
+                      </span>
+                    )}
 
                     <p className="text-sm text-gray-500 mt-1">
                       Código: {r.codigo}
