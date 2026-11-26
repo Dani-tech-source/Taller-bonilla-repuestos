@@ -1,17 +1,11 @@
 import { supabase } from "../lib/supabase";
 
+import { formatearPrecio, textoModelos } from "../lib/formato";
+
+
 // Siempre traer datos frescos de la base de datos
 export const dynamic = "force-dynamic";
 
-const lempiras = new Intl.NumberFormat("es-HN", {
-  style: "currency",
-  currency: "HNL",
-});
-
-// "1 modelo" / "3 modelos"
-function textoModelos(cantidad) {
-  return cantidad === 1 ? "1 modelo" : `${cantidad} modelos`;
-}
 
 export default async function Home() {
   const { data: repuestos, error } = await supabase
@@ -73,9 +67,7 @@ export default async function Home() {
                     </p>
 
                     <p className="text-lg font-bold text-gray-900 mt-3">
-                      {r.precio === null
-                        ? "Consultar precio"
-                        : lempiras.format(r.precio)}
+                      {formatearPrecio(r.precio)}
                     </p>
 
                     {/* Al hacer clic se despliega la lista de modelos */}
